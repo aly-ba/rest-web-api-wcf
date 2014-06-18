@@ -1,0 +1,49 @@
+﻿<Window x:Class="XML_Processing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="XML Processing for .NET Developers"
+        FontSize="16"
+        Height="600"
+        Width="400"
+        WindowStartupLocation="CenterScreen">
+  <Window.Resources>
+    <Style TargetType="StackPanel">
+      <Setter Property="HorizontalAlignment"
+              Value="Center" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <StackPanel>
+      <Label>Reading XML</Label>
+      <Button Name="btnReadXmlReader"
+              Click="btnReadXmlReader_Click"
+              Style="{StaticResource PDSALargeButton}">XmlReader</Button>
+      <Button Name="btnReadXmlDoc"
+              Click="btnReadXmlDoc_Click"
+              Style="{StaticResource PDSALargeButton}">XDocument</Button>
+      <Button Name="btnReadDataSet"
+              Click="btnReadDataSet_Click"
+              Style="{StaticResource PDSALargeButton}">DataSet</Button>
+      <Button Name="btnReadLINQ"
+              Click="btnReadLINQ_Click"
+              Style="{StaticResource PDSALargeButton}">LINQ / XElement</Button>
+      <Label>Writing XML</Label>
+      <Button Name="btnWriteXmlWriter"
+              Click="btnWriteXmlWriter_Click"
+              Style="{StaticResource PDSALargeButton}">XmlWriter</Button>
+      <Button Name="btnWriteXmlDoc"
+              Click="btnWriteXmlDoc_Click"
+              Style="{StaticResource PDSALargeButton}">XDocument</Button>
+      <Button Name="btnWriteDataSet"
+              Click="btnWriteDataSet_Click"
+              Style="{StaticResource PDSALargeButton}">DataSet</Button>
+      <Button Name="btnWriteLINQ"
+              Click="btnWriteLINQ_Click"
+              Style="{StaticResource PDSALargeButton}">LINQ / XElement</Button>
+      <Label>Samples</Label>
+      <Button Name="btnSamples"
+              Click="btnSamples_Click"
+              Style="{StaticResource PDSALargeButton}">Samples</Button>
+    </StackPanel>
+  </Grid>
+</Window>

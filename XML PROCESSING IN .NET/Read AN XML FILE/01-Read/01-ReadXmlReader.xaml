@@ -1,0 +1,45 @@
+﻿<Window x:Class="XML_Processing.Read.winReadXmlReader"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Read Using XMLReader Class"
+        FontSize="16"
+        Height="500"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+  <Window.Resources>
+    <Style TargetType="WrapPanel">
+      <Setter Property="HorizontalAlignment"
+              Value="Center" />
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+    <Style TargetType="TextBox">
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <WrapPanel>
+      <Button Name="btnSimple"
+              Click="btnSimple_Click"
+              Style="{StaticResource PDSALargeButton}">Simple Processing</Button>
+      <Button Name="btnMoveToContent"
+              Click="btnMoveToContent_Click"
+              Style="{StaticResource PDSALargeButton}">Using MoveToContent</Button>
+      <Button Name="btnReadStartElement"
+              Click="btnReadStartElement_Click"
+              Style="{StaticResource PDSALargeButton}">Using Read Start Element</Button>
+      <Button Name="btnReadElementString"
+              Style="{StaticResource PDSALargeButton}"
+              Click="btnReadElementString_Click">Using Read Element String</Button>
+    </WrapPanel>
+    <TextBox Grid.Row="1"
+             Name="txtResult"
+             VerticalScrollBarVisibility="Visible" />
+  </Grid>
+</Window>

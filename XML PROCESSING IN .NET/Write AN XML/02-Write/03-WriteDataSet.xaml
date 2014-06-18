@@ -1,0 +1,39 @@
+﻿<Window x:Class="XML_Processing.Write.winWriteDataSet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Write Using DataSet Class"
+        FontSize="16"
+        Height="500"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+  <Window.Resources>
+    <Style TargetType="WrapPanel">
+      <Setter Property="HorizontalAlignment"
+              Value="Center" />
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+    <Style TargetType="TextBox">
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <WrapPanel>
+      <Button Name="btnWriteSchema"
+              Click="btnWriteSchema_Click"
+              Style="{StaticResource PDSALargeButton}">Infer Schema / Write</Button>
+      <Button Name="btnStringToDataSet"
+              Click="btnStringToDataSet_Click"
+              Style="{StaticResource PDSALargeButton}">String to DataSet</Button>
+    </WrapPanel>
+    <TextBox Grid.Row="1"
+             Name="txtResult"
+             VerticalScrollBarVisibility="Visible" />
+  </Grid>
+</Window>

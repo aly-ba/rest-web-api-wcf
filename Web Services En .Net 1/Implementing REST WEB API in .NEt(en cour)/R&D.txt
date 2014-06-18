@@ -1,0 +1,26 @@
+// RD 
+              1.category Pattern.
+1create two new project data entity & mvc web api
+2.install web api lib from nuget for extension
+3.install entity framework to data entity framework
+4.use fiddler to test the web api.
+5.create now how new controller
+
+//Project Data Entity  Errra
+   Notes: 
+   AuthToken:a un Id, , un Token, uen date D'Expiration, un ApiUser
+   ApiUsers:a un id, un Nom, Un Secret un AppId.
+   Relation entre Auth et Usi . Un DiaryEntry contient Un ID
+   
+   Un DiaryEntry  :ID , une Food Item, Un Measure, Item,  uneQuantité et un Diary (ovveridable)(si je me permet).
+   
+   Un Diary : contstruit instancie Un list de DiaryEntry(); et Contient lui-même un ID, un CurrenDate, une collection de 
+             on(list), de DiarryEntry, un nom d'utilisateur UserName. Donc un Diary est une Collection de Diarray
+			 Entry avec son identifiant, sa date courrante et un Nom.
+   
+   Un Food: contient Id , une description, une Collection  de Measures et instancie une liste(collection) de measures
+              Donc un food une collection de Mesures, avec sa description et son identifiant.
+			  
+   Une measure : contient 	un id, une description, une quantité de calories, Un totalFat, un protein, un Carbohydrates,
+un Fiber, une quantité de Surcre,  du Iron , un Taux, Cholestol, une methode d'objet Food(overridable);  
+    

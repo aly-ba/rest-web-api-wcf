@@ -1,0 +1,36 @@
+﻿<Window x:Class="XML_Processing.Samples.winSamples"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="XML Samples"
+        FontSize="16"
+        Height="500"
+        Width="500"
+        WindowStartupLocation="CenterScreen">
+  <Window.Resources>
+    <Style TargetType="WrapPanel">
+      <Setter Property="HorizontalAlignment"
+              Value="Center" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <StackPanel>
+      <WrapPanel>
+        <Button Name="btnWriteFromDatabase"
+                Click="btnWriteFromDatabase_Click"
+                Style="{StaticResource PDSALargeButton}">Write From Database</Button>
+        <Button Name="btnPrototyping"
+                Click="btnPrototyping_Click"
+                Style="{StaticResource PDSALargeButton}">Prototyping</Button>
+        <Button Name="btnSerialization"
+                Click="btnSerialization_Click"
+                Style="{StaticResource PDSALargeButton}">Object Serialization</Button>
+        <Button Name="btnConfiguration"
+                Click="btnConfiguration_Click"
+                Style="{StaticResource PDSALargeButton}">Config Settings</Button>
+        <Button Name="btnOpenXML"
+                Click="btnOpenXML_Click"
+                Style="{StaticResource PDSALargeButton}">Open XML</Button>
+      </WrapPanel>
+    </StackPanel>
+  </Grid>
+</Window>

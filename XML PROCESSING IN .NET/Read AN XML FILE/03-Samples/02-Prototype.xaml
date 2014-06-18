@@ -1,0 +1,20 @@
+﻿<Window x:Class="XML_Processing.Samples.winPrototype"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prototyping With XML"
+        FontSize="16"
+        Height="500"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+  <Window.Resources>
+    <Style TargetType="ListView">
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <ListView Name="lvEmps"
+              ItemsSource="{Binding}" />
+  </Grid>
+</Window>

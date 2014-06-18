@@ -1,0 +1,16 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Protein Tracker";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2>Protein Tracker</h2>
+Total: @ViewBag.Total
+Goal: @ViewBag.Goal
+
+@using (Html.BeginForm("AddProtein", "ProteinTracker"))
+{
+    <input type="text" name="amount"/>
+    <input type="submit" value="Add"/>
+}

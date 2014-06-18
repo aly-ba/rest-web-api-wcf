@@ -1,0 +1,18 @@
+
+
+//Break Create the repository object pattern.
+///******************************************************************************//////////////////
+1Create new Project web Project
+2.create new class web API
+3.Ajouter un fichier a global.asax
+
+Notes global.asax ::::Le fichier Global.asax, également connu sous le nom de fichier d'application ASP.NET,
+ est un fichier facultatif qui contient du code permettant de répondre
+aux événements de niveau application déclenchés par ASP.NET ou les modules HttpModule.
+
+4.Add a second controller
+6.MVC 4 NEW Project Web API
+7.Create a new project TrainingCompany
+8.crate a new Api controller
+8.create class Courses
+9.Creer un code cliet-side avec js(pour consommer le web Api).

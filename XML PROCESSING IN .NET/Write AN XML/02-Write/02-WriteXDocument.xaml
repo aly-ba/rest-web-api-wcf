@@ -1,0 +1,45 @@
+﻿<Window x:Class="XML_Processing.Write.winWriteXDocument"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Write Using XDocument Class"
+        FontSize="16"
+        Height="500"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+  <Window.Resources>
+    <Style TargetType="WrapPanel">
+      <Setter Property="HorizontalAlignment"
+              Value="Center" />
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+    <Style TargetType="TextBox">
+      <Setter Property="Margin"
+              Value="4" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <WrapPanel>
+      <Button Name="btnSimpleWritingVerbose"
+              Click="btnSimpleWritingVerbose_Click"
+              Style="{StaticResource PDSALargeButton}">Simple Writing Verbose</Button>
+      <Button Name="btnSimpleWriting"
+              Click="btnSimpleWriting_Click"
+              Style="{StaticResource PDSALargeButton}">Simple Writing</Button>
+      <Button Name="btnWriteAttributes"
+              Click="btnWriteAttributes_Click"
+              Style="{StaticResource PDSALargeButton}">Writing Attributes</Button>
+      <Button Name="btnNoFormatting"
+              Click="btnNoFormatting_Click"
+              Style="{StaticResource PDSALargeButton}">No Formatting</Button>
+    </WrapPanel>
+    <TextBox Grid.Row="1"
+             Name="txtResult"
+             VerticalScrollBarVisibility="Visible" />
+  </Grid>
+</Window>
