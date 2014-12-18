@@ -1,0 +1,117 @@
+6/24/2012 3:55:54 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://mylaptop/HelloWorldServiceExtended/HelloWorldService.svc</To>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessage</Action>
+  </s:Header>
+  <s:Body>... stream ...</s:Body>
+</s:Envelope>
+6/24/2012 3:55:54 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessageResponse</Action>
+  </s:Header>
+  <s:Body>
+    <GetMessageResponse xmlns="http://tempuri.org/">
+      <GetMessageResult>Hello world from Mike Liu!</GetMessageResult>
+    </GetMessageResponse>
+  </s:Body>
+</s:Envelope>
+6/24/2012 3:57:17 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://mylaptop/HelloWorldServiceExtended/HelloWorldService.svc</To>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessage</Action>
+  </s:Header>
+  <s:Body>... stream ...</s:Body>
+</s:Envelope>
+6/24/2012 3:57:17 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessageResponse</Action>
+  </s:Header>
+  <s:Body>
+    <GetMessageResponse xmlns="http://tempuri.org/">
+      <GetMessageResult>Hello world from Mike Liu!</GetMessageResult>
+    </GetMessageResponse>
+  </s:Body>
+</s:Envelope>
+6/24/2012 3:57:32 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://mylaptop/HelloWorldServiceExtended/HelloWorldService.svc</To>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessage</Action>
+  </s:Header>
+  <s:Body>... stream ...</s:Body>
+</s:Envelope>
+6/24/2012 3:57:39 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessageResponse</Action>
+  </s:Header>
+  <s:Body>
+    <GetMessageResponse xmlns="http://tempuri.org/">
+      <GetMessageResult>Hello world from Mike Liu!</GetMessageResult>
+    </GetMessageResponse>
+  </s:Body>
+</s:Envelope>
+9/6/2012 9:03:34 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://mylaptop/HelloWorldServiceExtended/HelloWorldService.svc</To>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessage</Action>
+  </s:Header>
+  <s:Body>... stream ...</s:Body>
+</s:Envelope>
+9/6/2012 9:03:35 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessageResponse</Action>
+  </s:Header>
+  <s:Body>
+    <GetMessageResponse xmlns="http://tempuri.org/">
+      <GetMessageResult>Hello world from Mike Liu!</GetMessageResult>
+    </GetMessageResponse>
+  </s:Body>
+</s:Envelope>
+11/17/2012 5:28:42 PM
+HelloWorldService is invoked
+Message=
+11/17/2012 5:28:42 PM
+HelloWorldService is invoked
+Message=... stream ...
+11/17/2012 5:28:43 PM
+HelloWorldService is invoked
+Message=
+11/17/2012 5:28:43 PM
+HelloWorldService is invoked
+Message=... stream ...
+11/17/2012 5:29:02 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://mylaptop/HelloWorldServiceExtended/HelloWorldService.svc</To>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessage</Action>
+  </s:Header>
+  <s:Body>... stream ...</s:Body>
+</s:Envelope>
+11/17/2012 5:29:02 PM
+HelloWorldService is invoked
+Message=<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://tempuri.org/IHelloWorldService/GetMessageResponse</Action>
+  </s:Header>
+  <s:Body>
+    <GetMessageResponse xmlns="http://tempuri.org/">
+      <GetMessageResult>Hello world from Mike Liu!</GetMessageResult>
+    </GetMessageResponse>
+  </s:Body>
+</s:Envelope>

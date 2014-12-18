@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cfeedcfe-5f2c-4fc2-a284-dbd4a3ba6c29" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/HelloWorldServiceTcp/HelloWorldService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HelloWorldService.xsd" MetadataType="Schema" ID="77227cc7-0487-4cab-8dfe-e6bfa04ad2ab" SourceId="1" SourceUrl="http://mylaptop/HelloWorldServiceTcp/HelloWorldService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HelloWorldService.wsdl" MetadataType="Wsdl" ID="2440abbe-81c3-429d-805f-1f27ce723efd" SourceId="1" SourceUrl="http://localhost/HelloWorldServiceTcp/HelloWorldService.svc?wsdl" />
+    <MetadataFile FileName="HelloWorldService1.xsd" MetadataType="Schema" ID="0adf2f15-2848-4e18-baed-477e5ea0f0d7" SourceId="1" SourceUrl="http://mylaptop/HelloWorldServiceTcp/HelloWorldService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

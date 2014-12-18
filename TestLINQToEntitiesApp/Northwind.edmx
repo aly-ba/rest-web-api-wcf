@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NorthwindModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="NorthwindModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="NorthwindModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customers" EntityType="NorthwindModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="NorthwindModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UKCustomers" EntityType="NorthwindModel.Store.UKCustomers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USACustomers" EntityType="NorthwindModel.Store.USACustomers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Current Product List" EntityType="NorthwindModel.Store.Current Product List" store:Type="Views" store:Schema="dbo" store:Name="Current Product List">
+            <DefiningQuery>SELECT 
+      [Current Product List].[ProductID] AS [ProductID], 
+      [Current Product List].[ProductName] AS [ProductName]
+      FROM [dbo].[Current Product List] AS [Current Product List]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Products_Categories" Association="NorthwindModel.Store.FK_Products_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UKCustomers_Customers" Association="NorthwindModel.Store.FK_UKCustomers_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="UKCustomers" EntitySet="UKCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USACustomers_Customers" Association="NorthwindModel.Store.FK_USACustomers_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="USACustomers" EntitySet="USACustomers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="Picture" Type="image" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="nchar" Nullable="false" MaxLength="5" />
+          <Property Name="CompanyName" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactTitle" Type="nvarchar" MaxLength="30" />
+          <Property Name="Address" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" MaxLength="15" />
+          <Property Name="Region" Type="nvarchar" MaxLength="15" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Country" Type="nvarchar" MaxLength="15" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="QuantityPerUnit" Type="nvarchar" MaxLength="20" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitsInStock" Type="smallint" />
+          <Property Name="UnitsOnOrder" Type="smallint" />
+          <Property Name="ReorderLevel" Type="smallint" />
+          <Property Name="Discontinued" Type="bit" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="UKCustomers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="nchar" Nullable="false" MaxLength="5" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="USACustomers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="nchar" Nullable="false" MaxLength="5" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Northwind.dbo.Current Product List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Current Product List">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <Association Name="FK_Products_Categories">
+          <End Role="Categories" Type="NorthwindModel.Store.Categories" Multiplicity="0..1" />
+          <End Role="Products" Type="NorthwindModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UKCustomers_Customers">
+          <End Role="Customers" Type="NorthwindModel.Store.Customers" Multiplicity="1" />
+          <End Role="UKCustomers" Type="NorthwindModel.Store.UKCustomers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="UKCustomers">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USACustomers_Customers">
+          <End Role="Customers" Type="NorthwindModel.Store.Customers" Multiplicity="1" />
+          <End Role="USACustomers" Type="NorthwindModel.Store.USACustomers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="USACustomers">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Ten_Most_Expensive_Products" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="Ten Most Expensive Products" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NorthwindModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NorthwindEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="NorthwindModel.Category" />
+          <EntitySet Name="Products" EntityType="NorthwindModel.Product" />
+          <EntitySet Name="Current_Product_Lists" EntityType="NorthwindModel.Current_Product_List" />
+          <AssociationSet Name="FK_Products_Categories" Association="NorthwindModel.FK_Products_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <FunctionImport Name="Ten_Most_Expensive_Products" ReturnType="Collection(NorthwindModel.Ten_Most_Expensive_Products_Result)" />
+          <FunctionImport Name="GetProduct" EntitySet="Products" ReturnType="Collection(NorthwindModel.Product)">
+          <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetProduct1" ReturnType="Collection(NorthwindModel.GetProduct1_Result)">
+          <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="BaseCustomers" EntityType="NorthwindModel.BaseCustomer" />
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="NorthwindModel.FK_Products_Categories" FromRole="Categories" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="QuantityPerUnit" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" ConcurrencyMode="Fixed" />
+          <Property Name="UnitsInStock" Type="Int16" />
+          <Property Name="UnitsOnOrder" Type="Int16" />
+          <Property Name="ReorderLevel" Type="Int16" />
+          <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="NorthwindModel.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
+          <Property Type="Binary" Name="RowVersion" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+        </EntityType>
+        <EntityType Name="Current_Product_List">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Products_Categories">
+          <End Role="Categories" Type="NorthwindModel.Category" Multiplicity="0..1" />
+          <End Role="Products" Type="NorthwindModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="Ten_Most_Expensive_Products_Result">
+          <Property Type="String" Name="TenMostExpensiveProducts" Nullable="false" MaxLength="40" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="GetProduct1_Result">
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="SupplierID" Nullable="true" />
+          <Property Type="Int32" Name="CategoryID" Nullable="true" />
+          <Property Type="String" Name="QuantityPerUnit" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+          <Property Type="Int16" Name="UnitsInStock" Nullable="true" />
+          <Property Type="Int16" Name="UnitsOnOrder" Nullable="true" />
+          <Property Type="Int16" Name="ReorderLevel" Nullable="true" />
+          <Property Type="Boolean" Name="Discontinued" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="BaseCustomer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactName" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactTitle" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Region" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USACustomer" BaseType="NorthwindModel.BaseCustomer" >
+          <Property Type="String" Name="Phone" MaxLength="24" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UKCustomer" BaseType="NorthwindModel.BaseCustomer" >
+          <Property Type="String" Name="Fax" MaxLength="24" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UKCustomer1" BaseType="NorthwindModel.BaseCustomer">
+          <Property Type="String" Name="Fax" MaxLength="24" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USACustomer1" BaseType="NorthwindModel.BaseCustomer">
+          <Property Type="String" Name="Phone" MaxLength="24" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="NorthwindModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="NorthwindModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+                <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Current_Product_Lists">
+            <EntityTypeMapping TypeName="NorthwindModel.Current_Product_List">
+              <MappingFragment StoreEntitySet="Current Product List">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Ten_Most_Expensive_Products" FunctionName="NorthwindModel.Store.Ten_Most_Expensive_Products">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.Ten_Most_Expensive_Products_Result">
+                <ScalarProperty Name="TenMostExpensiveProducts" ColumnName="TenMostExpensiveProducts" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProduct" FunctionName="NorthwindModel.Store.GetProduct" />
+          <FunctionImportMapping FunctionImportName="GetProduct1" FunctionName="NorthwindModel.Store.GetProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.GetProduct1_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+                <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="BaseCustomers">
+            <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.BaseCustomer)">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.USACustomer)">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <Condition ColumnName="Country" Value="USA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.UKCustomer)">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <Condition ColumnName="Country" Value="UK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.USACustomer1)">
+              <MappingFragment StoreEntitySet="USACustomers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.UKCustomer1)">
+              <MappingFragment StoreEntitySet="UKCustomers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
